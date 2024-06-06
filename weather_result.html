@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background: linear-gradient(135deg, #6bcae5, #1a4982);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .coordinates {
+            font-size: 1.5em;
+            margin: 10px 0;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .underline {
+            border-bottom: 2px solid #fff;
+            width: 100px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coordinates Result</h1>
+    <div class="underline"></div>
+    <p class="coordinates">Latitude: {{ latitude }}</p>
+    <p class="coordinates">Longitude: {{ longitude }}</p>
+</body>
+</html>
