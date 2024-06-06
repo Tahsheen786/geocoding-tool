@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Address to Coordinates</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div>
+        <h1>Address to Coordinates</h1>
+        <form id="location-form">
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <select id="country" name="country">
+                    <option value="">Select Country</option>
+                    {% for country in countries %}
+                        <option value="{{ country }}">{{ country }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="state">State:</label>
+                <select id="state" name="state" disabled>
+                    <option value="">Select State</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <select id="city" name="city" disabled>
+                    <option value="">Select City</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="zip_code">Zip Code:</label>
+                <input type="text" id="zip_code" name="zip_code">
+            </div>
+            <button type="submit" id="get-weather-btn">Get Latitude and Longitude</button>
+        </form>
+        <div id="forecast"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
