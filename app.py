@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
 
 # Replace with your OpenCage API key
-API_KEY = "ec96e9590b764d4eb7507553aecfe51f"
+API_KEY = "YOUR API KEY"
 
 # Load location data from JSON
 with open('location_data.json', encoding='utf-8') as f:
